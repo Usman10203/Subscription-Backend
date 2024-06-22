@@ -1,6 +1,6 @@
 require("dotenv").config()
 const admin = require("firebase-admin");
-const serviceAccount = require("./serviceAccountKey.json")
+const serviceAccount = require("./serviceAccountKey")
 const express = require("express");
 const app = express()
 const cors = require("cors");

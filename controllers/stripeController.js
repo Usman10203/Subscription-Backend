@@ -2,7 +2,7 @@ const express = require('express');
 
 require("dotenv").config()
 const admin = require("firebase-admin");
-const serviceAccount = require("../serviceAccountKey.json");
+const serviceAccount = require("../serviceAccountKey");
 const moment = require("moment");
 
 const [basic, pro, business] =
