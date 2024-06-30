@@ -17,6 +17,7 @@ admin.initializeApp({
 
 const corsOptions = {
     origin: [
+        "https://subscription-frontend.vercel.app/",
         "http://localhost:5173",
         "*",
     ],
