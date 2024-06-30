@@ -15,19 +15,37 @@ admin.initializeApp({
     databaseURL: process.env.DATABASE_URL
 });
 
-const corsOptions = {
-    origin: [
-        "https://subscription-frontend.vercel.app/",
-        "http://localhost:5173",
-        "*",
-    ],
-    credentials: true,
-    methods: 'GET,POST,DELETE,UPDATE,PUT,PATCH',
-    optionsSuccessStatus: 200,
-    preflightContinue: false,
-    allowedHeaders: 'Content-Type,Authorization',
+const allowedOrigins = [
+    "https://subscription-frontend.vercel.app",
+    "https://subscription-frontend.vercel.app/",
+    "http://localhost:5173",
+    "*",
+];
 
+const corsOptions = {
+    origin: allowedOrigins,
+    credentials: true,
+    methods: 'GET,POST,DELETE,PUT,PATCH',
+    allowedHeaders: 'Content-Type,Authorization',
+    optionsSuccessStatus: 200,
+    preflightContinue: false
 };
+
+app.use(cors(corsOptions));
+
+// const corsOptions = {
+//     origin: [
+//         "https://subscription-frontend.vercel.app/",
+//         "http://localhost:5173",
+//         "*",
+//     ],
+//     credentials: true,
+//     methods: 'GET,POST,DELETE,UPDATE,PUT,PATCH',
+//     optionsSuccessStatus: 200,
+//     preflightContinue: false,
+//     allowedHeaders: 'Content-Type,Authorization',
+
+// };
 
 app.use(cors(corsOptions));
 
